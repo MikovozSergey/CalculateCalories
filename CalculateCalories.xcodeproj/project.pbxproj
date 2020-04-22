@@ -14,6 +14,7 @@
 		F92F1F1F24505C0E00384AC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92F1F1D24505C0E00384AC5 /* LaunchScreen.storyboard */; };
 		F92F1F2724505D3100384AC5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F1F2624505D3100384AC5 /* MainViewController.swift */; };
 		F92F1F29245077BB00384AC5 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F1F28245077BB00384AC5 /* CustomTableViewCell.swift */; };
+		F95AD5882450AF5000DAE1DB /* NewPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AD5872450AF5000DAE1DB /* NewPersonViewController.swift */; };
 		F9E3C463245083E100D0128B /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E3C462245083E100D0128B /* PersonModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		F92F1F2024505C0E00384AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F92F1F2624505D3100384AC5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F92F1F28245077BB00384AC5 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		F95AD5872450AF5000DAE1DB /* NewPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPersonViewController.swift; sourceTree = "<group>"; };
 		F9E3C462245083E100D0128B /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				F92F1F1224505C0100384AC5 /* AppDelegate.swift */,
 				F92F1F1424505C0100384AC5 /* SceneDelegate.swift */,
 				F92F1F2624505D3100384AC5 /* MainViewController.swift */,
+				F95AD5872450AF5000DAE1DB /* NewPersonViewController.swift */,
 				F92F1F28245077BB00384AC5 /* CustomTableViewCell.swift */,
 				F92F1F1824505C0100384AC5 /* Main.storyboard */,
 				F9E3C462245083E100D0128B /* PersonModel.swift */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F95AD5882450AF5000DAE1DB /* NewPersonViewController.swift in Sources */,
 				F92F1F2724505D3100384AC5 /* MainViewController.swift in Sources */,
 				F92F1F1324505C0100384AC5 /* AppDelegate.swift in Sources */,
 				F9E3C463245083E100D0128B /* PersonModel.swift in Sources */,

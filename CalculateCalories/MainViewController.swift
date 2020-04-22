@@ -15,7 +15,7 @@ class MainViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        tableView.tableFooterView = UIView() // убираем лишние полосы от ячеек
     }
 
     // MARK: - Table view data source
