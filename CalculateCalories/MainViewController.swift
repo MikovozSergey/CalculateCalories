@@ -30,8 +30,16 @@ class MainViewController: UITableViewController {
 
         cell.textLabel?.text = personsProfiles[indexPath.row]
         cell.imageView?.image = UIImage(named: personsProfiles[indexPath.row])
+        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
+        cell.imageView?.clipsToBounds = true // скругляем изображение
         
         return cell
+    }
+    
+    // MARK: Table view delegate
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { // высота строки ячейки
+        return 85
     }
 
     /*

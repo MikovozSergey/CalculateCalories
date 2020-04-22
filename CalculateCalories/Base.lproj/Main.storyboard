@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Calculate Calories-->
         <scene sceneID="SOX-sy-lmU">
             <objects>
                 <tableViewController id="f5C-Wn-ahV" customClass="MainViewController" customModule="CalculateCalories" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                             <outlet property="delegate" destination="f5C-Wn-ahV" id="76y-yO-ewr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ywq-dR-F29"/>
+                    <navigationItem key="navigationItem" title="Calculate Calories" id="ywq-dR-F29"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAP-BB-nT6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,6 +42,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JC4-ek-Xd3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="23"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="f5C-Wn-ahV" kind="relationship" relationship="rootViewController" id="YOL-q1-Ya3"/>
