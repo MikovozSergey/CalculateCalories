@@ -26,15 +26,13 @@ class NewPersonViewController: UITableViewController {
             let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             
             let camera = UIAlertAction(title: "Camera", style: .default) { _ in
-                
-                // TODO: chooseImagePicker
                 // метод для выбора изображения
+                self.chooseImagePicker(source: .camera)
             }
             
             let photo = UIAlertAction(title: "Photo", style: .default) { _ in
-                
-                // TODO: chooseImagePicker
                 // метод для выбора изображения
+                self.chooseImagePicker(source: .photoLibrary)
             }
             
             let cancel = UIAlertAction(title: "Cancel", style: .cancel)
@@ -61,5 +59,21 @@ extension NewPersonViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
+    }
+}
+
+// MARK: Work with image
+
+extension NewPersonViewController {
+    
+    func chooseImagePicker (source: UIImagePickerController.SourceType) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(source)  { // если у нас доступны объекты типа UIImagePicker
+            let imagePicker = UIImagePickerController()
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = source
+            
+            present(imagePicker, animated: true) // показываем наш  imagePicker
+        }
     }
 }
