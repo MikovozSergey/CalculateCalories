@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UITableViewController {
     
-    let personsProfiles = ["Ekaterina", "Alexander", "Sergey"]
+    let persons = Person.getPersons()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,18 @@ class MainViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return personsProfiles.count
+        return persons.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        cell.nameLabel.text = personsProfiles[indexPath.row]
-        cell.imageOfPerson.image = UIImage(named: personsProfiles[indexPath.row])
+        cell.nameLabel.text = persons[indexPath.row].name
+        cell.currentWeightLabel.text = String(persons[indexPath.row].currentWeight)
+        cell.desiredWeightLabel.text = String(persons[indexPath.row].desiredWeight)
+        cell.essentialColoriesLabel.text = String(persons[indexPath.row].essentialColories)
+        
+        cell.imageOfPerson.image = UIImage(named: persons[indexPath.row].name)
         cell.imageOfPerson.layer.cornerRadius = cell.imageOfPerson.frame.size.height / 2
         cell.imageOfPerson.clipsToBounds = true // скругляем изображение
         
