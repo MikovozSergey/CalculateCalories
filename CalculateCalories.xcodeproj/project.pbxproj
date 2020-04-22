@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		F92F1F1324505C0100384AC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F1F1224505C0100384AC5 /* AppDelegate.swift */; };
 		F92F1F1524505C0100384AC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F1F1424505C0100384AC5 /* SceneDelegate.swift */; };
-		F92F1F1724505C0100384AC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F1F1624505C0100384AC5 /* ViewController.swift */; };
 		F92F1F1A24505C0100384AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92F1F1824505C0100384AC5 /* Main.storyboard */; };
 		F92F1F1C24505C0E00384AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F92F1F1B24505C0E00384AC5 /* Assets.xcassets */; };
 		F92F1F1F24505C0E00384AC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92F1F1D24505C0E00384AC5 /* LaunchScreen.storyboard */; };
+		F92F1F2724505D3100384AC5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F1F2624505D3100384AC5 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F92F1F0F24505C0100384AC5 /* CalculateCalories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculateCalories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F92F1F1224505C0100384AC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F92F1F1424505C0100384AC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F92F1F1624505C0100384AC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F92F1F1924505C0100384AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F92F1F1B24505C0E00384AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F92F1F1E24505C0E00384AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F92F1F2024505C0E00384AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F92F1F2624505D3100384AC5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			children = (
 				F92F1F1224505C0100384AC5 /* AppDelegate.swift */,
 				F92F1F1424505C0100384AC5 /* SceneDelegate.swift */,
-				F92F1F1624505C0100384AC5 /* ViewController.swift */,
+				F92F1F2624505D3100384AC5 /* MainViewController.swift */,
 				F92F1F1824505C0100384AC5 /* Main.storyboard */,
 				F92F1F1B24505C0E00384AC5 /* Assets.xcassets */,
 				F92F1F1D24505C0E00384AC5 /* LaunchScreen.storyboard */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F92F1F1724505C0100384AC5 /* ViewController.swift in Sources */,
+				F92F1F2724505D3100384AC5 /* MainViewController.swift in Sources */,
 				F92F1F1324505C0100384AC5 /* AppDelegate.swift in Sources */,
 				F92F1F1524505C0100384AC5 /* SceneDelegate.swift in Sources */,
 			);
@@ -287,6 +287,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4XTZSDF67;
 				INFOPLIST_FILE = CalculateCalories/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +295,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = VironIT.CalculateCalories;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -305,6 +306,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4XTZSDF67;
 				INFOPLIST_FILE = CalculateCalories/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = VironIT.CalculateCalories;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
