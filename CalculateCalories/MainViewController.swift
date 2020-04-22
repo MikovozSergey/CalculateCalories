@@ -26,12 +26,12 @@ class MainViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        cell.textLabel?.text = personsProfiles[indexPath.row]
-        cell.imageView?.image = UIImage(named: personsProfiles[indexPath.row])
-        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
-        cell.imageView?.clipsToBounds = true // скругляем изображение
+        cell.nameLabel.text = personsProfiles[indexPath.row]
+        cell.imageOfPerson.image = UIImage(named: personsProfiles[indexPath.row])
+        cell.imageOfPerson.layer.cornerRadius = cell.imageOfPerson.frame.size.height / 2
+        cell.imageOfPerson.clipsToBounds = true // скругляем изображение
         
         return cell
     }
@@ -39,7 +39,8 @@ class MainViewController: UITableViewController {
     // MARK: Table view delegate
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { // высота строки ячейки
-        return 85
+        return 100
+    
     }
 
     /*
