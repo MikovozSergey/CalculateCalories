@@ -29,11 +29,11 @@ class MainViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
         cell.nameLabel.text = persons[indexPath.row].name
-        cell.currentWeightLabel.text = String(persons[indexPath.row].currentWeight)
-        cell.desiredWeightLabel.text = String(persons[indexPath.row].desiredWeight)
-        cell.essentialColoriesLabel.text = String(persons[indexPath.row].essentialColories)
+        cell.currentWeightLabel.text = persons[indexPath.row].currentWeight
+        cell.desiredWeightLabel.text = persons[indexPath.row].desiredWeight
+        cell.essentialColoriesLabel.text = persons[indexPath.row].essentialColories
         
-        cell.imageOfPerson.image = UIImage(named: persons[indexPath.row].name)
+        cell.imageOfPerson.image = UIImage(named: persons[indexPath.row].personImage!)
         cell.imageOfPerson.layer.cornerRadius = cell.imageOfPerson.frame.size.height / 2
         cell.imageOfPerson.clipsToBounds = true // скругляем изображение
         

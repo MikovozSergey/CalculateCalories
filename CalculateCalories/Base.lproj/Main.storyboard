@@ -104,7 +104,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                         <sections>
-                            <tableViewSection id="g9p-f6-702">
+                            <tableViewSection footerTitle="" id="g9p-f6-702">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="KGs-ou-ouA">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
@@ -378,18 +378,42 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8X-ae-QnS">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="65.5"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nry-lq-Yhr">
+                                                    <rect key="frame" x="134" y="6" width="146" height="31.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Calculate Calories"/>
+                                                    <connections>
+                                                        <action selector="calculateTapped:" destination="iBF-GK-vGS" eventType="touchUpInside" id="PYi-Ke-5U1"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Nry-lq-Yhr" secondAttribute="trailing" constant="134" id="3Gv-Mh-tLr"/>
+                                                <constraint firstItem="Nry-lq-Yhr" firstAttribute="leading" secondItem="4IM-cL-nkk" secondAttribute="leading" constant="134" id="3WB-iW-fn1"/>
+                                                <constraint firstAttribute="bottom" secondItem="Nry-lq-Yhr" secondAttribute="bottom" constant="6.5" id="quS-i1-7MI"/>
+                                                <constraint firstItem="Nry-lq-Yhr" firstAttribute="top" secondItem="4IM-cL-nkk" secondAttribute="top" constant="6" id="xMV-Ko-dnW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="m2V-iC-pBH">
+                                        <rect key="frame" x="0.0" y="576" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m2V-iC-pBH" id="mB8-6o-eQ9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your calories " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOg-KE-Vcs">
+                                                    <rect key="frame" x="40" y="11" width="334" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="B8X-ae-QnS" secondAttribute="trailing" constant="20" id="DLv-nL-q3V"/>
-                                                <constraint firstItem="B8X-ae-QnS" firstAttribute="top" secondItem="4IM-cL-nkk" secondAttribute="top" id="Q9U-OL-cIn"/>
-                                                <constraint firstAttribute="bottom" secondItem="B8X-ae-QnS" secondAttribute="bottom" constant="-21.5" id="c1f-nD-Lil"/>
-                                                <constraint firstItem="B8X-ae-QnS" firstAttribute="leading" secondItem="4IM-cL-nkk" secondAttribute="leading" constant="20" id="cr9-Uk-NRP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="VOg-KE-Vcs" secondAttribute="trailing" constant="20" id="PbM-au-Zlf"/>
+                                                <constraint firstItem="VOg-KE-Vcs" firstAttribute="top" secondItem="mB8-6o-eQ9" secondAttribute="topMargin" id="bNF-jI-1fX"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="VOg-KE-Vcs" secondAttribute="bottom" constant="0.5" id="d4d-za-HW2"/>
+                                                <constraint firstItem="VOg-KE-Vcs" firstAttribute="leading" secondItem="mB8-6o-eQ9" secondAttribute="leadingMargin" constant="20" id="kbQ-yi-t1p"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -410,7 +434,16 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Lox-qk-H29"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageOfPerson" destination="E71-WB-z0v" id="OQb-om-gmk"/>
+                        <outlet property="personAge" destination="RVo-1a-8eb" id="M1u-4B-gf7"/>
+                        <outlet property="personCurrentWeight" destination="jbe-gd-4pq" id="eqY-4L-Dxp"/>
+                        <outlet property="personDesiredWeight" destination="ftm-uK-gch" id="OaQ-Lw-u7Q"/>
+                        <outlet property="personHeight" destination="poj-sR-4e9" id="3A4-pq-qKi"/>
+                        <outlet property="personImage" destination="E71-WB-z0v" id="OQb-om-gmk"/>
+                        <outlet property="personName" destination="7b9-JP-sjU" id="Zq2-gh-RXt"/>
+                        <outlet property="resultCaloriesLabel" destination="VOg-KE-Vcs" id="bSt-6l-esG"/>
+                        <outlet property="saveButton" destination="Lox-qk-H29" id="cUu-xZ-Okf"/>
+                        <outlet property="sexSegmentControl" destination="DqT-Oe-UiR" id="kpX-P3-f1q"/>
+                        <outlet property="trainingSegmentControl" destination="DqT-Oe-UiR" id="lp9-iQ-NQS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oP8-AG-PYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -6,19 +6,20 @@
 //  Copyright © 2020 Sergey Mikovoz. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Person {
     
     var name: String
-    var currentWeight: Int
-    var image: String
+    var currentWeight: String?
+    var image: UIImage?
+    var personImage: String?
     var age: Int?
     var height: Int?
-    var desiredWeight: Int
+    var desiredWeight: String?
     var sexSegmentControl: Int?
     var activitiSegmentControl: Int?
-    var essentialColories: Int
+    var essentialColories: String?
     
     static let personsProfiles = ["Ekaterina", "Alexander", "Sergey"]
     
@@ -26,7 +27,7 @@ struct Person {
         var persons = [Person]()
         
         for person in personsProfiles {
-            persons.append(Person(name: person, currentWeight: 80, image: person, age: nil, height: nil, desiredWeight: 60, sexSegmentControl: nil, activitiSegmentControl: nil, essentialColories: 2000))
+            persons.append(Person(name: person, currentWeight: "80", image: nil, personImage: person, age: nil, height: nil, desiredWeight: "60", sexSegmentControl: nil, activitiSegmentControl: nil, essentialColories: "2000"))
         }
         
         return persons

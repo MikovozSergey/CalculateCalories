@@ -10,14 +10,36 @@ import UIKit
 
 class NewPersonViewController: UITableViewController {
 
+    var newPerson: Person?
     
-    @IBOutlet weak var imageOfPerson: UIImageView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    @IBOutlet weak var personImage: UIImageView!
+    @IBOutlet weak var personName: UITextField!
+    @IBOutlet weak var personAge: UITextField!
+    @IBOutlet weak var personHeight: UITextField!
+    @IBOutlet weak var personCurrentWeight: UITextField!
+    @IBOutlet weak var personDesiredWeight: UITextField!
+    @IBOutlet weak var sexSegmentControl: UISegmentedControl!
+    @IBOutlet weak var trainingSegmentControl: UISegmentedControl!
+    @IBOutlet weak var resultCaloriesLabel: UILabel!
+    
+    
+    @IBAction func calculateTapped(_ sender: Any) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView() // убираем лишние полосы от ячеек
-       
+        saveButton.isEnabled = false
+        // tableView.tableFooterView = UIView() // убираем лишние полосы от ячеек
+        personName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        personAge.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        personHeight.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        personCurrentWeight.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        personDesiredWeight.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        
     }
     
 // MARK: Table View delegate
@@ -28,7 +50,7 @@ class NewPersonViewController: UITableViewController {
         if indexPath.row == 0 {
             
             let cameraIcon = #imageLiteral(resourceName: "camera")
-            let photoIcon = #imageLiteral(resourceName: "camera")
+            let photoIcon = #imageLiteral(resourceName: "photo")
             
             let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             
@@ -58,6 +80,10 @@ class NewPersonViewController: UITableViewController {
             view.endEditing(true)
         }
     }
+    
+//    func saveNewPerson() {
+//        newPerson = Person(name: personName.text!, currentWeight: <#T##String?#>, image: <#T##UIImage?#>, personImage: <#T##String?#>, age: <#T##Int?#>, height: <#T##Int?#>, desiredWeight: <#T##String?#>, sexSegmentControl: <#T##Int?#>, activitiSegmentControl: <#T##Int?#>, essentialColories: <#T##String?#>)
+//    }
 
 }
 
@@ -72,7 +98,41 @@ extension NewPersonViewController: UITextFieldDelegate {
         
         return true
     }
+    
+    @objc private func textFieldChanged() {
+        
+        if personName.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+        
+        if personAge.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+        
+        if personHeight.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+        
+        if personCurrentWeight.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+        
+        if personDesiredWeight.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+    }
 }
+
 
 // MARK: Work with image
 
@@ -92,9 +152,9 @@ extension NewPersonViewController: UIImagePickerControllerDelegate, UINavigation
     
     func imagePickerController(_ picker: UIImagePickerController,  didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) { // присваиваем нашему приложению выбранную отредактированную картинку
         
-        imageOfPerson.image = info[.editedImage] as? UIImage
-        imageOfPerson.contentMode = .scaleAspectFill // делаем картинку ровной в нашем ImageView
-        imageOfPerson.clipsToBounds = true
+        personImage.image = info[.editedImage] as? UIImage
+        personImage.contentMode = .scaleAspectFill // делаем картинку ровной в нашем ImageView
+        personImage.clipsToBounds = true
         
         dismiss(animated: true) // закрываем imagePickerController
     }
