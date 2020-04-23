@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3109E5F3176CB13529DDCC5F /* Pods_CalculateCalories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1573208834931D534E4FEB1F /* Pods_CalculateCalories.framework */; };
 		F92F1F1324505C0100384AC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F1F1224505C0100384AC5 /* AppDelegate.swift */; };
 		F92F1F1524505C0100384AC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F1F1424505C0100384AC5 /* SceneDelegate.swift */; };
 		F92F1F1A24505C0100384AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92F1F1824505C0100384AC5 /* Main.storyboard */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1573208834931D534E4FEB1F /* Pods_CalculateCalories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalculateCalories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A0C27A09455C3D14BAC937 /* Pods-CalculateCalories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculateCalories.release.xcconfig"; path = "Target Support Files/Pods-CalculateCalories/Pods-CalculateCalories.release.xcconfig"; sourceTree = "<group>"; };
 		F92F1F0F24505C0100384AC5 /* CalculateCalories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculateCalories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F92F1F1224505C0100384AC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F92F1F1424505C0100384AC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +32,7 @@
 		F92F1F2624505D3100384AC5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F92F1F28245077BB00384AC5 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		F95AD5872450AF5000DAE1DB /* NewPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPersonViewController.swift; sourceTree = "<group>"; };
+		F9CC2824834E933CB4BF1382 /* Pods-CalculateCalories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculateCalories.debug.xcconfig"; path = "Target Support Files/Pods-CalculateCalories/Pods-CalculateCalories.debug.xcconfig"; sourceTree = "<group>"; };
 		F9E3C462245083E100D0128B /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3109E5F3176CB13529DDCC5F /* Pods_CalculateCalories.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88C9EF1E6EBA02FA35ABD2AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9CC2824834E933CB4BF1382 /* Pods-CalculateCalories.debug.xcconfig */,
+				C2A0C27A09455C3D14BAC937 /* Pods-CalculateCalories.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9659466C77AFD2E9C602D547 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1573208834931D534E4FEB1F /* Pods_CalculateCalories.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F92F1F0624505C0000384AC5 = {
 			isa = PBXGroup;
 			children = (
 				F92F1F1124505C0100384AC5 /* CalculateCalories */,
 				F92F1F1024505C0100384AC5 /* Products */,
+				88C9EF1E6EBA02FA35ABD2AC /* Pods */,
+				9659466C77AFD2E9C602D547 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F92F1F2324505C0E00384AC5 /* Build configuration list for PBXNativeTarget "CalculateCalories" */;
 			buildPhases = (
+				8A08CE9F0088B77128448B7C /* [CP] Check Pods Manifest.lock */,
 				F92F1F0B24505C0000384AC5 /* Sources */,
 				F92F1F0C24505C0000384AC5 /* Frameworks */,
 				F92F1F0D24505C0000384AC5 /* Resources */,
+				F759A600827B9BDEA78DD956 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +168,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A08CE9F0088B77128448B7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalculateCalories-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F759A600827B9BDEA78DD956 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalculateCalories/Pods-CalculateCalories-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalculateCalories/Pods-CalculateCalories-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CalculateCalories/Pods-CalculateCalories-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F92F1F0B24505C0000384AC5 /* Sources */ = {
@@ -294,6 +363,7 @@
 		};
 		F92F1F2424505C0E00384AC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9CC2824834E933CB4BF1382 /* Pods-CalculateCalories.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -313,6 +383,7 @@
 		};
 		F92F1F2524505C0E00384AC5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2A0C27A09455C3D14BAC937 /* Pods-CalculateCalories.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
