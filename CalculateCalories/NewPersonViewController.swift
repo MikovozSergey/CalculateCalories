@@ -11,6 +11,7 @@ import UIKit
 class NewPersonViewController: UITableViewController {
 
     var newPerson: Person?
+    var imageIsChanged = false
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -111,9 +112,18 @@ class NewPersonViewController: UITableViewController {
     
     
     func saveNewPerson() {
+        
+        var image: UIImage?
+        
+        if imageIsChanged {
+            image = personImage.image
+        } else {
+            image = #imageLiteral(resourceName: "imagePH")
+        }
+        
         newPerson = Person(name: personName.text!,
                            currentWeight: personCurrentWeight.text!,
-                           image: personImage.image,
+                           image: image,
                            personImage: "Ekaterina",
                            age: personAge.text,
                            height: personHeight.text,
@@ -198,6 +208,8 @@ extension NewPersonViewController: UIImagePickerControllerDelegate, UINavigation
         personImage.image = info[.editedImage] as? UIImage
         personImage.contentMode = .scaleAspectFill // делаем картинку ровной в нашем ImageView
         personImage.clipsToBounds = true
+        
+        imageIsChanged = true // значит не меняем картинку
         
         dismiss(animated: true) // закрываем imagePickerController
     }
