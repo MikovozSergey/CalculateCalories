@@ -54,7 +54,7 @@ class NewPersonViewController: UITableViewController {
         
         bmr *= selectedFactor
 
-        resultCaloriesLabel.text = String(bmr)
+        resultCaloriesLabel.text = String(floor(bmr))
     }
     
     override func viewDidLoad() {
