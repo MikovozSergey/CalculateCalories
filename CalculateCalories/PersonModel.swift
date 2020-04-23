@@ -14,8 +14,8 @@ struct Person {
     var currentWeight: String?
     var image: UIImage?
     var personImage: String?
-    var age: Int?
-    var height: Int?
+    var age: String?
+    var height: String?
     var desiredWeight: String?
     var sexSegmentControl: Int?
     var activitiSegmentControl: Int?

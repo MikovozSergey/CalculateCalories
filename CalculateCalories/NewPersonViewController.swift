@@ -11,6 +11,7 @@ import UIKit
 class NewPersonViewController: UITableViewController {
 
     var newPerson: Person?
+    var bmr: Double = 0 // colories
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -26,14 +27,41 @@ class NewPersonViewController: UITableViewController {
     
     
     @IBAction func calculateTapped(_ sender: Any) {
+       
+        var bmi: Double = 0
         
+        if let age: Int = Int(personAge.text!) {
+            if let height: Int = Int(personHeight.text!) {
+                if let weight: Int = Int(personDesiredWeight.text!){
+                    
+                    switch sexSegmentControl.selectedSegmentIndex {
+                    case 0:
+                        bmr = 88.362 + 13.397 * Double(weight) + 4.799 * Double(height) - 5.677 * Double(age)
+                    case 1:
+                        bmr = 447.593 + 9.247 * Double(weight) + 3.098 * Double(height) - 4.330 * Double(age)
+                    default:
+                        bmr = 0
+                    }
+                    
+                    bmi = Double(weight) / pow(Double(height) / 100, 2)
+                    
+                }
+            }
+        }
+        
+        let factor = [1.375, 1.55, 1.725, 1.9]
+        let selectedFactor = factor[trainingSegmentControl.selectedSegmentIndex]
+        
+        bmr *= selectedFactor
+
+        resultCaloriesLabel.text = "You must consume \(Int(bmr)) colories for your desired weight.\nBody mass index = \(Int(bmi))."
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         saveButton.isEnabled = false
-        // tableView.tableFooterView = UIView() // убираем лишние полосы от ячеек
+        tableView.tableFooterView = UIView() // убираем лишние полосы от ячеек
         personName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         personAge.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         personHeight.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
@@ -81,9 +109,24 @@ class NewPersonViewController: UITableViewController {
         }
     }
     
-//    func saveNewPerson() {
-//        newPerson = Person(name: personName.text!, currentWeight: <#T##String?#>, image: <#T##UIImage?#>, personImage: <#T##String?#>, age: <#T##Int?#>, height: <#T##Int?#>, desiredWeight: <#T##String?#>, sexSegmentControl: <#T##Int?#>, activitiSegmentControl: <#T##Int?#>, essentialColories: <#T##String?#>)
-//    }
+    
+    func saveNewPerson() {
+        newPerson = Person(name: personName.text!,
+                           currentWeight: personCurrentWeight.text!,
+                           image: personImage.image,
+                           personImage: nil,
+                           age: personAge.text,
+                           height: personHeight.text,
+                           desiredWeight: personDesiredWeight.text!,
+                           sexSegmentControl: nil,
+                           activitiSegmentControl: nil,
+                           essentialColories: resultCaloriesLabel.text!)
+    }
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
 
 }
 

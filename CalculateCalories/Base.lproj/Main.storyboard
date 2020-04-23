@@ -388,22 +388,22 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Nry-lq-Yhr" secondAttribute="trailing" constant="134" id="3Gv-Mh-tLr"/>
-                                                <constraint firstItem="Nry-lq-Yhr" firstAttribute="leading" secondItem="4IM-cL-nkk" secondAttribute="leading" constant="134" id="3WB-iW-fn1"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Nry-lq-Yhr" secondAttribute="trailing" constant="134" id="3Gv-Mh-tLr"/>
+                                                <constraint firstItem="Nry-lq-Yhr" firstAttribute="leading" relation="lessThanOrEqual" secondItem="4IM-cL-nkk" secondAttribute="leading" constant="134" id="3WB-iW-fn1"/>
                                                 <constraint firstAttribute="bottom" secondItem="Nry-lq-Yhr" secondAttribute="bottom" constant="6.5" id="quS-i1-7MI"/>
                                                 <constraint firstItem="Nry-lq-Yhr" firstAttribute="top" secondItem="4IM-cL-nkk" secondAttribute="top" constant="6" id="xMV-Ko-dnW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="m2V-iC-pBH">
-                                        <rect key="frame" x="0.0" y="576" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="100" id="m2V-iC-pBH">
+                                        <rect key="frame" x="0.0" y="576" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m2V-iC-pBH" id="mB8-6o-eQ9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your calories " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOg-KE-Vcs">
-                                                    <rect key="frame" x="40" y="11" width="334" height="21.5"/>
+                                                    <rect key="frame" x="40" y="11" width="334" height="77.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -428,10 +428,14 @@
                     <navigationItem key="navigationItem" title="New profile" id="X4m-C1-m2U">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="pA7-Ys-WyM">
                             <connections>
-                                <segue destination="FRT-oN-MFY" kind="unwind" unwindAction="cancelAction:" id="IKI-PL-5VA"/>
+                                <action selector="cancelAction:" destination="iBF-GK-vGS" id="JqQ-HM-nVd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Lox-qk-H29"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Lox-qk-H29">
+                            <connections>
+                                <segue destination="FRT-oN-MFY" kind="unwind" unwindAction="unwindSegue:" id="LcN-G3-CQX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="personAge" destination="RVo-1a-8eb" id="M1u-4B-gf7"/>

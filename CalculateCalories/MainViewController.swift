@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UITableViewController {
     
-    let persons = Person.getPersons()
+    var persons = Person.getPersons()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +27,19 @@ class MainViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        
+        let person = persons[indexPath.row]
 
-        cell.nameLabel.text = persons[indexPath.row].name
-        cell.currentWeightLabel.text = persons[indexPath.row].currentWeight
-        cell.desiredWeightLabel.text = persons[indexPath.row].desiredWeight
-        cell.essentialColoriesLabel.text = persons[indexPath.row].essentialColories
+        cell.nameLabel.text = person.name
+        cell.currentWeightLabel.text = person.currentWeight
+        cell.desiredWeightLabel.text = person.desiredWeight
+        cell.essentialColoriesLabel.text = person.essentialColories
+        
+        if person.image == nil {
+            cell.imageOfPerson.image = UIImage(named: person.personImage!)
+        } else {
+            cell.imageOfPerson.image = person.image
+        }
         
         cell.imageOfPerson.image = UIImage(named: persons[indexPath.row].personImage!)
         cell.imageOfPerson.layer.cornerRadius = cell.imageOfPerson.frame.size.height / 2
@@ -57,6 +65,11 @@ class MainViewController: UITableViewController {
     }
     */
     
-    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {} // выход с помощью кнопки Cancel на MainViewController
-
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        guard let newPersonVC = segue.source as? NewPersonViewController else { return }
+        
+        newPersonVC.saveNewPerson()
+        persons.append(newPersonVC.newPerson!)
+    }
+    
 }
