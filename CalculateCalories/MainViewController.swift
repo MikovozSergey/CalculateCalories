@@ -31,9 +31,9 @@ class MainViewController: UITableViewController {
         let person = persons[indexPath.row]
 
         cell.nameLabel.text = person.name
-        cell.currentWeightLabel.text = person.currentWeight
-        cell.desiredWeightLabel.text = person.desiredWeight
-        cell.essentialColoriesLabel.text = person.essentialColories
+        cell.currentWeightLabel.text = "Current weight - " + person.currentWeight! + " kg"
+        cell.desiredWeightLabel.text = "Desired weight - " + person.desiredWeight! + " kg"
+        cell.essentialColoriesLabel.text = "Essential colories - " + person.essentialColories!
         
         if person.image == nil {
             cell.imageOfPerson.image = UIImage(named: person.personImage!)
@@ -41,7 +41,6 @@ class MainViewController: UITableViewController {
             cell.imageOfPerson.image = person.image
         }
         
-        cell.imageOfPerson.image = UIImage(named: persons[indexPath.row].personImage!)
         cell.imageOfPerson.layer.cornerRadius = cell.imageOfPerson.frame.size.height / 2
         cell.imageOfPerson.clipsToBounds = true // скругляем изображение
         
@@ -70,6 +69,8 @@ class MainViewController: UITableViewController {
         
         newPersonVC.saveNewPerson()
         persons.append(newPersonVC.newPerson!)
+        
+        tableView.reloadData()
     }
     
 }

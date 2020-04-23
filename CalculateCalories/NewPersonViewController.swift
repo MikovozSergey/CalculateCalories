@@ -11,7 +11,6 @@ import UIKit
 class NewPersonViewController: UITableViewController {
 
     var newPerson: Person?
-    var bmr: Double = 0 // colories
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -28,7 +27,8 @@ class NewPersonViewController: UITableViewController {
     
     @IBAction func calculateTapped(_ sender: Any) {
        
-        var bmi: Double = 0
+        var bmi: Double = 0 // body index mass
+        var bmr: Double = 0 // colories
         
         if let age: Int = Int(personAge.text!) {
             if let height: Int = Int(personHeight.text!) {
@@ -54,14 +54,14 @@ class NewPersonViewController: UITableViewController {
         
         bmr *= selectedFactor
 
-        resultCaloriesLabel.text = "You must consume \(Int(bmr)) colories for your desired weight.\nBody mass index = \(Int(bmi))."
+        resultCaloriesLabel.text = String(bmr)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         saveButton.isEnabled = false
-        tableView.tableFooterView = UIView() // убираем лишние полосы от ячеек
+        // tableView.tableFooterView = UIView() // убираем лишние полосы от ячеек
         personName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         personAge.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         personHeight.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
@@ -114,12 +114,12 @@ class NewPersonViewController: UITableViewController {
         newPerson = Person(name: personName.text!,
                            currentWeight: personCurrentWeight.text!,
                            image: personImage.image,
-                           personImage: nil,
+                           personImage: "Ekaterina",
                            age: personAge.text,
                            height: personHeight.text,
                            desiredWeight: personDesiredWeight.text!,
-                           sexSegmentControl: nil,
-                           activitiSegmentControl: nil,
+                           sexSegmentControl: sexSegmentControl.selectedSegmentIndex,
+                           activitiSegmentControl: trainingSegmentControl.selectedSegmentIndex,
                            essentialColories: resultCaloriesLabel.text!)
     }
     

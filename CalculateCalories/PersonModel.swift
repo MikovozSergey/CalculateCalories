@@ -27,7 +27,7 @@ struct Person {
         var persons = [Person]()
         
         for person in personsProfiles {
-            persons.append(Person(name: person, currentWeight: "80", image: nil, personImage: person, age: nil, height: nil, desiredWeight: "60", sexSegmentControl: nil, activitiSegmentControl: nil, essentialColories: "2000"))
+            persons.append(Person(name: person, currentWeight: "80", image: UIImage(named: person), personImage: "Ekaterina", age: "20", height: "200", desiredWeight: "60", sexSegmentControl: 1, activitiSegmentControl: 2, essentialColories: "2000"))
         }
         
         return persons
